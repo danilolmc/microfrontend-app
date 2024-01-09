@@ -1,0 +1,20 @@
+.menu-data {
+    opacity: 0;
+    transition: ease-in 75ms;
+}
+
+.menu-data[open="true"] {
+    transform: scale(1);
+    opacity: 1;
+    display: block;
+}
+
+.menu-data[open="false"] {
+    transform: scale(0.95);
+    opacity: 0;
+    display: none;
+}
+
+a {
+    cursor: pointer;
+}

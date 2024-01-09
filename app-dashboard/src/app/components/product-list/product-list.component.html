@@ -1,0 +1,28 @@
+<ng-template #list>
+
+    @for (item of productList; track $index) {
+    <div class="group">
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+            <img [src]="item.imgSrc"
+                [attr.alt]="item.description"
+                class="h-full w-full object-cover object-center group-hover:opacity-75 aspect-square">
+        </div>
+        <h3 class="mt-4 text-sm text-white">{{item.name}}</h3>
+        <h3 class="mt-4 text-sm text-white">{{item.description}}</h3>
+        <p class="mt-1 text-lg font-medium text-white">{{item.price | currency: 'BRL'}}</p>
+    </div>
+    }
+    @empty {
+    <p class="text-white opacity-70 text-center my-32">No products to display</p>
+    }
+</ng-template>
+
+
+@if(productList.length > 0){
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <ng-container [ngTemplateOutlet]="list"></ng-container>
+    </div>
+} @else {
+    <ng-container [ngTemplateOutlet]="list"></ng-container>
+}
+

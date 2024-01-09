@@ -1,0 +1,56 @@
+<single-spa-router mode="hash" base="/">
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <div loader="customLoader">
+    <nav class="fixed z-40">
+      <application name="@app/app-header"></application>
+    </nav>
+    <main class="relative z-0 top-18">
+      <div class="page_content z-0">
+        <route default>
+          <application name="@app/angular3"></application>
+        </route>
+        <route path="angular1">
+          <route path="signin">
+            <application name="@app/angular1"></application>
+          </route>
+          <route default>
+            <application name="@app/app-404"></application>
+          </route>
+        </route>
+        <route path="angular2">
+          <route path="signup">
+            <application name="@app/angular2"></application>
+          </route>
+          <route default>
+            <application name="@app/app-404"></application>
+          </route>
+        </route>
+        <route path="dashboard">
+          <route path="home">
+            <application name="@app/app-dashboard"></application>
+          </route>
+          <route default>
+            <application name="@app/app-404"></application>
+          </route>
+        </route>
+      </div>
+    </main>
+  </div>
+</single-spa-router>
