@@ -1,5 +1,3 @@
-### Pendente: adicionar o interceptor para o app de dashboard, depois subir para o github
-
 ### Angular Microfrontend
 
 Microfrontend application built with Angular and Single Spa Framework
